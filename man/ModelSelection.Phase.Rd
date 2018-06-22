@@ -57,7 +57,6 @@ outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                                list.reduction = idxs,
                                                family=gaussian, signif=0.01)
 
-
 # Model Selection Phase using only the remainer observations
 square.terms = outcome.Exploratory.Phase$mat.select.SQ
 interaction.terms = outcome.Exploratory.Phase$mat.select.INTER
@@ -67,8 +66,4 @@ outcome.ModelSelection.Phase = ModelSelection.Phase(X=dgp$X[71:100,],
                                                       list.reduction = idxs,
                                                       square.terms = square.terms,
                                                       interaction.terms = interaction.terms, signif=0.01)
-
-
-
-
 }
