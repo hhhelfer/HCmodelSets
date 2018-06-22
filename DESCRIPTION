@@ -1,7 +1,7 @@
 Package: HCmodelSets
 Type: Package
-Title: HCmodelSets
-Version: 1.0.0
+Title: Hypercube model sets package
+Version: 0.1.1
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
 Description: Set of functions to estimate the model sets from Cox, D. R. and Battey, H. S. (2017) <10.1073/pnas.1703764114>.

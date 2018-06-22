@@ -6,8 +6,7 @@
 This function tests low dimensional subsests of the set of retained variables from the reduction phase and any squared or interaction terms suggested at the exploratory phase. Lists of well-fitting models of each dimension are returned.
 }
 \usage{
-ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01,
-                      square.terms=NULL, interaction.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE)
+ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, square.terms=NULL, interaction.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE)
 }
 
 \arguments{
@@ -46,12 +45,6 @@ Hoeltgebaum, H. H.
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
 
-## Design matrix
-dgp$X
-
-## Response variable
-dgp$Y
-
 #Reduction Phase using only the first 70 observations
 outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                            dmHC = 5, family=gaussian, seed.HC = 1093)
@@ -66,14 +59,14 @@ outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
 
 
 # Model Selection Phase using only the remainer observations
-sq.terms = outcome.Exploratory.Phase$mat.select.SQ
-it.terms = outcome.Exploratory.Phase$mat.select.INTER
+square.terms = outcome.Exploratory.Phase$mat.select.SQ
+interaction.terms = outcome.Exploratory.Phase$mat.select.INTER
 
 outcome.ModelSelection.Phase = ModelSelection.Phase(X=dgp$X[71:100,],
                                                       Y=dgp$Y[71:100],  family = gaussian,
                                                       list.reduction = idxs,
-                                                      square.terms = sq.terms,
-                                                      interaction.terms = it.terms, signif=0.01)
+                                                      square.terms = square.terms,
+                                                      interaction.terms = interaction.terms, signif=0.01)
 
 
 
