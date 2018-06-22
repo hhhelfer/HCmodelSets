@@ -1,1 +1,6 @@
 exportPattern("^[[:alpha:]]+")
+  importFrom("grDevices", "rainbow")
+  importFrom("stats", "coef", "gaussian", "glm", "qf", "residuals",
+             "rnorm")
+  importFrom("utils", "combn")
+  import("ggplot2","mvtnorm","survival")
