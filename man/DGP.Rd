@@ -26,6 +26,7 @@ DGP(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed)
 \value{
 \item{X}{The simulated design matrix.}
 \item{Y}{The simulated response variable.}
+\item{TRUE.idx}{Indexes of the variables in the true model.}
 }
 \references{
 Battey, H. S. and Cox, D. R. (2018). Large numbers of explanatory variables: A probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, to appear.

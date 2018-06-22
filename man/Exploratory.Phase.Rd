@@ -58,7 +58,7 @@ outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
 # Exploratory Phase using only the first 70 observations, choosing the variables which
 # were selected at least two times in the third dimension reduction
 
-idxs = outcome.Reduction.Phase$List.Selection$`Hypercube with dim 3`$numSelected2
+idxs = outcome.Reduction.Phase$List.Selection$`Hypercube with dim 2`$numSelected1
 outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                                list.reduction = idxs,
                                                family=gaussian, signif=0.01)

@@ -10,6 +10,7 @@ DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed){
   #### creating DGP
   permuteVec=sample(d);
   trueBeta=trueBetaInit[permuteVec] # permute the rows of the initial beta vector
+  TRUE.idx = which(trueBeta!=0)
   I = diag(d)
   permMatrix=I[permuteVec,]
   covPerm=permMatrix%*%covMatrix%*%(solve(permMatrix)) # permute rows and columns of the covariance matrix accordingly.
@@ -17,7 +18,8 @@ DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed){
   epsilon=rnorm(n,0,noise)
   YAll=intercept*rep(1,n)+XAll%*%trueBeta+epsilon;
 
-  return(list("Y"=YAll,"X"=XAll))
+
+  return(list("Y"=YAll,"X"=XAll,"TRUE.idx"=TRUE.idx))
 
 }
 
