@@ -1,11 +1,10 @@
 Package: HCmodelSets
 Type: Package
-Title: Set of functions to estimate the model sets from Cox, D. R. and Battey, H. S. (2017) <10.1073/pnas.1703764114>
+Title: HCmodelSets
 Version: 1.0.0
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Set of functions to estimate the model sets from Cox, D. R. and Battey, H. S. (2017) <10.1073/pnas.1703764114>
 License: MIT
 Encoding: UTF-8
 LazyData: true
