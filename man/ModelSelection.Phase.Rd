@@ -6,7 +6,9 @@
 This function tests low dimensional subsests of the set of retained variables from the reduction phase and any squared or interaction terms suggested at the exploratory phase. Lists of well-fitting models of each dimension are returned.
 }
 \usage{
-ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, square.terms=NULL, interaction.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE)
+ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE,
+                      signif=0.01, square.terms=NULL, interaction.terms=NULL,
+                      modelSize=NULL, Cox.Hazard = FALSE)
 }
 
 \arguments{
@@ -41,6 +43,7 @@ Hoeltgebaum, H. H.
 \code{\link{Reduction.Phase}}, \code{\link{Exploratory.Phase}}
 }
 \examples{
+\donttest{
 ## Generates a random DGP using the DGP from the HCmodelSelection package
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
@@ -62,8 +65,9 @@ square.terms = outcome.Exploratory.Phase$mat.select.SQ
 interaction.terms = outcome.Exploratory.Phase$mat.select.INTER
 
 outcome.ModelSelection.Phase = ModelSelection.Phase(X=dgp$X[71:100,],
-                                                      Y=dgp$Y[71:100],  family = gaussian,
-                                                      list.reduction = idxs,
-                                                      square.terms = square.terms,
-                                                      interaction.terms = interaction.terms, signif=0.01)
+                                                    Y=dgp$Y[71:100],  family = gaussian,
+                                                    list.reduction = idxs,
+                                                    square.terms = square.terms,
+                                                    interaction.terms = interaction.terms, signif=0.01)
+}
 }

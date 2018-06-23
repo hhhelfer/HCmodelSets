@@ -39,6 +39,8 @@ Hoeltgebaum, H. H.
 
 \examples{
 ## Generates DGP
+\donttest{
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
+          }
 }

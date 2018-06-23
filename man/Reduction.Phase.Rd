@@ -38,6 +38,7 @@ Hoeltgebaum, H. H.
 \section{Acknowledgement}{The work was supported by the UK Engineering and Physical Sciences Research Council under grant number EP/P002757/1}
 
 \examples{
+\donttest{
 ## Generates a random DGP using the DGP from the HCmodelSelection package
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
@@ -46,6 +47,6 @@ dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
 outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                            dmHC = 5, family=gaussian, seed.HC = 1093)
 
-
+}
 
 }

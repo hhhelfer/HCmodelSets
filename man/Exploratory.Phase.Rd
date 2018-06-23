@@ -41,6 +41,7 @@ Hoeltgebaum, H. H.
 \code{\link{Reduction.Phase}}
 }
 \examples{
+\donttest{
 ## Generates a random DGP using the DGP from the HCmodelSelection package
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
@@ -56,7 +57,7 @@ idxs = outcome.Reduction.Phase$List.Selection$`Hypercube with dim 2`$numSelected
 outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                                list.reduction = idxs,
                                                family=gaussian, signif=0.01)
-
+}
 
 
 }
