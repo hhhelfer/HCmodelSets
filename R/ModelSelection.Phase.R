@@ -1,4 +1,4 @@
-ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, square.terms=NULL, interaction.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE){
+ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, sq.terms=NULL, in.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE){
 
   X = as.matrix(X)
 
@@ -23,24 +23,24 @@ ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, log.transf
     stop('You need to specify Cox.Hazard==TRUE to run cox model!')
   }
 
-  if(!is.null(square.terms)){
-    X.SQ = X[,square.terms]^2
-    SQ.names = paste(square.terms,"^2")
+  if(!is.null(sq.terms)){
+    X.SQ = X[,sq.terms]^2
+    SQ.names = paste(sq.terms,"^2")
   }
 
-  if(is.null(square.terms)){
+  if(is.null(sq.terms)){
     X.SQ = SQ.names = NULL
   }
 
-  if(!is.null(interaction.terms)){
+  if(!is.null(in.terms)){
     X.ITER = iter.names = NULL
-    for(ii in 1:nrow(interaction.terms)){
-      X.ITER = cbind(X.ITER,X[,interaction.terms[ii,1]]*X[,interaction.terms[ii,2]])
-      iter.names = c(iter.names,paste(interaction.terms[ii,1],"-",interaction.terms[ii,2]))
+    for(ii in 1:nrow(in.terms)){
+      X.ITER = cbind(X.ITER,X[,in.terms[ii,1]]*X[,in.terms[ii,2]])
+      iter.names = c(iter.names,paste(in.terms[ii,1],"-",in.terms[ii,2]))
     }
   }
 
-  if(is.null(interaction.terms)){
+  if(is.null(in.terms)){
     X.ITER = iter.names = NULL
   }
 

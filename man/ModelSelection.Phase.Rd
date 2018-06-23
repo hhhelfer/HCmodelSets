@@ -7,7 +7,7 @@ This function tests low dimensional subsests of the set of retained variables fr
 }
 \usage{
 ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE,
-                      signif=0.01, square.terms=NULL, interaction.terms=NULL,
+                      signif=0.01, sq.terms=NULL, in.terms=NULL,
                       modelSize=NULL, Cox.Hazard = FALSE)
 }
 
@@ -18,8 +18,8 @@ ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE,
   \item{family}{A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. See \code{\link{family}} for more details.}
   \item{log.transf}{Apply a log transformation to the elements of the design matrix. Default is FALSE.}
   \item{signif}{Significance level of the likelihood ratio test against the comprehensive model. The default is 0.01.}
-  \item{square.terms}{Indices of squared terms suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
-  \item{interaction.terms}{Indices of pairs of variables suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
+  \item{sq.terms}{Indices of squared terms suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
+  \item{in.terms}{Indices of pairs of variables suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
   \item{modelSize}{Maximum size of the models to be tested. Curently the maximum is 7. If not provided a default is used.}
   \item{Cox.Hazard}{If TRUE fits proportional hazards regression model. The family argument will be ignored if Cox.Hazard=TRUE.}
 }
@@ -61,13 +61,10 @@ outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                                family=gaussian, signif=0.01)
 
 # Model Selection Phase using only the remainer observations
-square.terms = outcome.Exploratory.Phase$mat.select.SQ
-interaction.terms = outcome.Exploratory.Phase$mat.select.INTER
+sq.terms = outcome.Exploratory.Phase$mat.select.SQ
+in.terms = outcome.Exploratory.Phase$mat.select.INTER
 
-outcome.ModelSelection.Phase = ModelSelection.Phase(X=dgp$X[71:100,],
-                                                    Y=dgp$Y[71:100],  family = gaussian,
-                                                    list.reduction = idxs,
-                                                    square.terms = square.terms,
-                                                    interaction.terms = interaction.terms, signif=0.01)
+MS = ModelSelection.Phase(X=dgp$X[71:100,],Y=dgp$Y[71:100], list.reduction = idxs,
+                          sq.terms = sq.terms,in.terms = in.terms, signif=0.01)
 }
 }
