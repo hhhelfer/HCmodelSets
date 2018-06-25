@@ -48,7 +48,7 @@ dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
 
 #Reduction Phase using only the first 70 observations
 outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
-                                           dmHC = 5, family=gaussian, seed.HC = 1093)
+                                           family=gaussian, seed.HC = 1093)
 
 # Exploratory Phase using only the first 70 observations, choosing the variables which
 # were selected at least two times in the third dimension reduction
@@ -59,6 +59,22 @@ outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
                                                family=gaussian, signif=0.01)
 }
 
+\dontshow{
+dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=20, intercept=5, noise=1,
+          var=1, d=50, DGP.seed = 2019)
 
+#Reduction Phase using only the first 70 observations
+outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:10,],Y=dgp$Y[1:10],
+                                           dmHC = 2, family=gaussian, seed.HC = 1093)
+
+# Exploratory Phase using only the first 70 observations, choosing the variables which
+# were selected at least two times in the third dimension reduction
+
+idxs = outcome.Reduction.Phase$List.Selection$`Hypercube with dim 2`$numSelected2
+outcome.Exploratory.Phase =  Exploratory.Phase(X=dgp$X[1:10,],Y=dgp$Y[1:10],
+                                               list.reduction = idxs,
+                                               family=gaussian, signif=0.01)
+
+}
 }
 

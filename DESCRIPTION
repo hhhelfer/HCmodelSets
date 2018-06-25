@@ -1,10 +1,10 @@
 Package: HCmodelSets
 Type: Package
-Title: Hypercube Model Sets Package
+Title: Regression with a large number of potential explanatory variables: an R implementation of the procedure proposed by Cox, D.R. and Battey, H.S. (2017) <10.1073/pnas.1703764114>
 Version: 0.1.1
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
-Description: Set of functions to estimate the model sets from Cox, D. R. and Battey, H. S. (2017) <10.1073/pnas.1703764114>.
+Description: Software for performing the reduction, exploratory and model selection phases of the procedure proposed by Cox, D.R. and Battey, H.S. (2017) <10.1073/pnas.1703764114> for sparse regression when the number of potential explanatory variables far exceeds the sample size. The software supports linear regression, likelihood-based fitting of generalized linear regression models and the proportional hazards model fitted by partial likelihood.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

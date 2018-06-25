@@ -40,7 +40,13 @@ Hoeltgebaum, H. H.
 \examples{
 ## Generates DGP
 \donttest{
+## Generates a random DGP using the DGP from the HCmodelSelection package
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
           var=1, d=1000, DGP.seed = 2019)
           }
+\dontshow{
+dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=20, intercept=5, noise=1,
+          var=1, d=50, DGP.seed = 2019)
+
+}
 }
