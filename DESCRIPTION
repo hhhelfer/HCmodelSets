@@ -1,6 +1,6 @@
 Package: HCmodelSets
 Type: Package
-Title: Regression with a large number of potential explanatory variables: an R implementation of the procedure proposed by Cox, D.R. and Battey, H.S. (2017) <10.1073/pnas.1703764114>
+Title: Regression with a Large Number of Potential Explanatory Variables: An R Implementation of the Procedure Proposed by Cox, D.R. and Battey, H.S. (2017) <10.1073/Pnas.1703764114>
 Version: 0.1.1
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
