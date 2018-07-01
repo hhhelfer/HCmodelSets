@@ -1,6 +1,6 @@
 Package: HCmodelSets
 Type: Package
-Title: Regression with a Large Number of Potential Explanatory Variables: An R Implementation of the hypercube model sets
+Title: Regression with a Large Number of Potential Explanatory Variables: An R Implementation of the Hypercube Model Sets
 Version: 0.1.1
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
