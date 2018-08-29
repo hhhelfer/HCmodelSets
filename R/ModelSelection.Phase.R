@@ -1,13 +1,6 @@
-ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, sq.terms=NULL, in.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE){
+ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, signif=0.01, sq.terms=NULL, in.terms=NULL, modelSize=NULL, Cox.Hazard = FALSE){
 
   X = as.matrix(X)
-
-  ### Design Matrix Transformation
-  if(log.transf==TRUE){
-    lX = log(X)
-    mLX = colMeans(lX)
-    X = scale(lX, center=TRUE, scale=FALSE)
-  }
 
   if(Cox.Hazard==TRUE){
     Y = as.matrix(Y)

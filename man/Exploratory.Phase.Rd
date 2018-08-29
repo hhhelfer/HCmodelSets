@@ -6,7 +6,7 @@
 This function performs the exploratory phase on the variables retained through the reduction phase, returning any significant squared and interaction terms.
 }
 \usage{
-Exploratory.Phase(X, Y, list.reduction, family=gaussian, log.transf=FALSE,
+Exploratory.Phase(X, Y, list.reduction, family=gaussian,
                   signif=0.01, silent=TRUE, Cox.Hazard = FALSE)
 }
 
@@ -15,7 +15,6 @@ Exploratory.Phase(X, Y, list.reduction, family=gaussian, log.transf=FALSE,
   \item{Y}{Response vector.}
   \item{list.reduction}{Indices of retained variables from the reduction phase.}
   \item{family}{A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. See \code{\link{family}} for more details.}
-  \item{log.transf}{Apply a log transformation to the elements of the design matrix. Default is FALSE.}
   \item{signif}{Significance level for the assessment of squared and interaction terms. The default is 0.01.}
   \item{silent}{By default, silent=TRUE. If silent=FALSE the user can decide upon the exclusion of individual interaction terms.}
   \item{Cox.Hazard}{If TRUE fits proportional hazards regression model. The family argument will be ignored if Cox.Hazard=TRUE.}

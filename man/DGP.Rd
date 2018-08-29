@@ -6,7 +6,7 @@
 This function generates realizations of random variables as described in the simple example of Battey, H. S. & Cox, D. R. (2018).
 }
 \usage{
-DGP(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed)
+DGP(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed=NULL)
 }
 
 \arguments{

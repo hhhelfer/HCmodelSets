@@ -1,4 +1,4 @@
-Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, log.transf=FALSE, signif=0.01, silent=TRUE, Cox.Hazard = FALSE){
+Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01, silent=TRUE, Cox.Hazard = FALSE){
 
   X = as.matrix(X)
 
@@ -14,13 +14,6 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, log.transf=F
 
   if(Cox.Hazard==FALSE & ncol(as.matrix(Y))==2){
     stop('You need to specify Cox.Hazard==TRUE to run cox model!')
-  }
-
-  ### Design Matrix Transformation
-  if(log.transf==TRUE){
-    lX = log(X)
-    mLX = colMeans(lX)
-    X = scale(lX, center=TRUE, scale=FALSE)
   }
 
   n = nrow(X)

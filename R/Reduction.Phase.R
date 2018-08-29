@@ -1,4 +1,4 @@
-Reduction.Phase = function(X,Y,family=gaussian, log.transf=FALSE, dmHC=NULL,vector.signif=NULL,seed.HC = NULL, Cox.Hazard = FALSE){
+Reduction.Phase = function(X,Y,family=gaussian, dmHC=NULL,vector.signif=NULL,seed.HC = NULL, Cox.Hazard = FALSE){
 
   glmRoutine = function(subsetX,Y,family=gaussian,intercept=TRUE,significance=NULL, Cox.Hazard=FALSE){
 
@@ -99,13 +99,6 @@ Reduction.Phase = function(X,Y,family=gaussian, log.transf=FALSE, dmHC=NULL,vect
 
   if(!is.null(dmHC) & !is.null(vector.signif) & (length(vector.signif)+1)!=dmHC){
     stop(paste('The lenght of vector.signif is not the same as the HC dimension',dmHC,'.'))
-  }
-
-  ### Design Matrix Transformation
-  if(log.transf==TRUE){
-    lX = log(X)
-    mLX = colMeans(lX)
-    X = scale(lX, center=TRUE, scale=FALSE)
   }
 
   ### Signif vectors

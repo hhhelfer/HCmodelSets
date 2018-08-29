@@ -6,7 +6,7 @@
 This function tests low dimensional subsests of the set of retained variables from the reduction phase and any squared or interaction terms suggested at the exploratory phase. Lists of well-fitting models of each dimension are returned.
 }
 \usage{
-ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE,
+ModelSelection.Phase(X,Y, list.reduction, family=gaussian,
                       signif=0.01, sq.terms=NULL, in.terms=NULL,
                       modelSize=NULL, Cox.Hazard = FALSE)
 }
@@ -16,7 +16,6 @@ ModelSelection.Phase(X,Y, list.reduction, family=gaussian, log.transf=FALSE,
   \item{Y}{Response vector.}
   \item{list.reduction}{Indices of variables that where chosen at the reduction phase.}
   \item{family}{A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. See \code{\link{family}} for more details.}
-  \item{log.transf}{Apply a log transformation to the elements of the design matrix. Default is FALSE.}
   \item{signif}{Significance level of the likelihood ratio test against the comprehensive model. The default is 0.01.}
   \item{sq.terms}{Indices of squared terms suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
   \item{in.terms}{Indices of pairs of variables suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}

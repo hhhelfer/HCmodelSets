@@ -1,11 +1,14 @@
 
-DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed){
+DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed=NULL){
 
   cov1=rho*rep(1,a+s)+(1-rho)*diag(a+s);
   covMatrixInit = rbind(cbind(cov1, matrix(0,s+a,d-(s+a))),cbind(matrix(0,d-(s+a),s+a),diag(d-(s+a))))
   covMatrix = diag(sqrt(var) * rep(1,d)) %*% covMatrixInit %*% diag(sqrt(var)* rep(1,d))
   trueBetaInit = c(sigStrength * rep(1,s) , rep(0,d-s))
-  set.seed(DGP.seed)
+
+  if(!is.null(DGP.seed)){
+    set.seed(DGP.seed)
+  }
 
   #### creating DGP
   permuteVec=sample(d);
