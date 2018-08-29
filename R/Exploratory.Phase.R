@@ -70,13 +70,24 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
     }
 
     ## deciding upon type of Y
-    type.var = ifelse(length(unique(Y))==2,"B","C")
+    if(Cox.Hazard==FALSE){
+      type.var = ifelse(length(unique(Y))==2,"B","C")
+    } else{
+      type.var = ifelse(length(unique(Y[,1]))==2,"B","C")
+    }
 
     mat.response.INTER = NULL
+
     for(i in 1:nrow(mat.select.INTER)){
 
-      data.res = data.frame("X1"=X[,mat.select.INTER[i,1]],
-                            "X2"=X[,mat.select.INTER[i,2]], "Y"= Y)
+      if(Cox.Hazard==FALSE){
+        data.res = data.frame("X1"=X[,mat.select.INTER[i,1]],
+                              "X2"=X[,mat.select.INTER[i,2]], "Y"= Y)
+      } else{
+        data.res = data.frame("X1"=X[,mat.select.INTER[i,1]],
+                              "X2"=X[,mat.select.INTER[i,2]], "Y"= Y[,1])
+      }
+
       names(data.res)[1] = mat.select.INTER[i,1]
       names(data.res)[2] = mat.select.INTER[i,2]
 
@@ -104,7 +115,7 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
       mat.response.INTER[i] = answ
     }
 
-    mat.select.INTER = mat.select.INTER[which(mat.response.INTER=="N"),]
+    mat.select.INTER = matrix(mat.select.INTER[which(mat.response.INTER=="N"),],ncol=2)
 
     if(nrow(mat.select.INTER)==0){ mat.select.INTER=NULL }
 
@@ -112,5 +123,4 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
 
 
   return(list("mat.select.SQ"=mat.select.SQ,"mat.select.INTER"=mat.select.INTER))
-
 }
