@@ -1,7 +1,6 @@
 Reduction.Phase = function(X,Y,family=gaussian, dmHC=NULL,vector.signif=NULL,seed.HC = NULL, Cox.Hazard = FALSE){
 
   glmRoutine = function(subsetX,Y,family=gaussian,intercept=TRUE,significance=NULL, Cox.Hazard=FALSE){
-    require(survival)
 
     n = nrow(subsetX)
 

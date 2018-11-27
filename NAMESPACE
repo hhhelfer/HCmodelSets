@@ -3,4 +3,4 @@ exportPattern("^[[:alpha:]]+")
   importFrom("stats", "coef", "gaussian", "glm", "qf", "residuals",
              "rnorm")
   importFrom("utils", "combn")
-  import("ggplot2","mvtnorm","survival")
+  import("ggplot2","mvtnorm","survival","stats", "logLik", "qchisq")
