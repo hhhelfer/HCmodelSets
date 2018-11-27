@@ -49,8 +49,8 @@ outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
 # Not run, using vector.signif argument
 # Fixing a decision rule of getting the 2 most significant in the first reduction
 # and in the subsequent reduction, only those variables significant at 0.001 level
-# outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70], vector.signif = c(0.001,2),
-#                                           family=gaussian, dmHC = 3)
+# outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
+#                           vector.signif = c(0.001,2), family=gaussian, dmHC = 3)
 
 }
 \dontshow{
