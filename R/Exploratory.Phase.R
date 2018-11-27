@@ -66,7 +66,7 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
   if(silent==FALSE){
 
     if(is.null(mat.select.INTER)){
-      stop('No variables selected with interaction! Please increase the significance level.')
+      stop('No variables selected with interaction! Please increase the significance level or silent=TRUE.')
     }
 
     ## deciding upon type of Y

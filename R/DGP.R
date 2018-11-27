@@ -1,4 +1,3 @@
-
 DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed=NULL){
 
   cov1=rho*rep(1,a+s)+(1-rho)*diag(a+s);
@@ -21,8 +20,6 @@ DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,DGP.seed=NULL){
   epsilon=rnorm(n,0,noise)
   YAll=intercept*rep(1,n)+XAll%*%trueBeta+epsilon;
 
-
   return(list("Y"=YAll,"X"=XAll,"TRUE.idx"=TRUE.idx))
 
 }
-

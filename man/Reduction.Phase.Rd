@@ -15,7 +15,7 @@ Reduction.Phase(X,Y,family=gaussian,
   \item{Y}{Response vector.}
   \item{family}{A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. See \code{\link{family}} for more details.}
   \item{dmHC}{Dimension of the hypercube to be used in the first-stage reduction. This version supports dimensions 2,3,4 and 5. If not specified a sensible value is calculated and used.}
-  \item{vector.signif}{Vector of decision rules to be used at each stage of the reduction. The first value makes reference to the decision rule for the lowest dimensional hypercube and so on. If values are less than 1, this specifies a significance level of a test. All variables significant at this level in at least half the analyses in which they appear will be retained. If the value is 1 or 2, variables are retained if they are among the 1 or 2 most significant in at least half the analyses in which they appear. If unspecified a default rule is used.}
+  \item{vector.signif}{Vector of decision rules to be used at each stage of the reduction. The first value makes reference to the decision rule for the highest dimensional hypercube and so on. If values are less than 1, this specifies a significance level of a test. All variables significant at this level in at least half the analyses in which they appear will be retained. If the value is 1 or 2, variables are retained if they are among the 1 or 2 most significant in at least half the analyses in which they appear. If unspecified a default rule is used.}
   \item{seed.HC}{Seed for randomization of the variable indices in the hypercube. If not provided, the variables are arranged according to their original order.}
   \item{Cox.Hazard}{If TRUE fits proportional hazards regression model. The family argument will be ignored if Cox.Hazard=TRUE.}
 }
@@ -28,7 +28,7 @@ Reduction.Phase(X,Y,family=gaussian,
 \references{
 Cox, D. R. and Battey, H. S. (2017). Large numbers of explanatory variables, a semi-descriptive analysis. \emph{Proceedings of the National Academy of Sciences}, 114(32), 8592-8595.
 
-Battey, H. S. and Cox, D. R. (2018). Large numbers of explanatory variables: A probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, to appear.
+Battey, H. S. & Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631
 }
 \author{
 Hoeltgebaum, H. H.
