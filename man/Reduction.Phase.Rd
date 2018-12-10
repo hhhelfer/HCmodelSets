@@ -28,29 +28,29 @@ Reduction.Phase(X,Y,family=gaussian,
 \references{
 Cox, D. R. and Battey, H. S. (2017). Large numbers of explanatory variables, a semi-descriptive analysis. \emph{Proceedings of the National Academy of Sciences}, 114(32), 8592-8595.
 
-Battey, H. S. & Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631
+Battey, H. S. & Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631.
 }
 \author{
 Hoeltgebaum, H. H.
 }
 
-\section{Acknowledgement}{The work was supported by the UK Engineering and Physical Sciences Research Council under grant number EP/P002757/1}
+\section{Acknowledgement}{The work was supported by the UK Engineering and Physical Sciences Research Council under grant number EP/P002757/1.}
 
 \examples{
 \donttest{
 ## Generates a random DGP
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
-          var=1, d=1000, DGP.seed = 2019)
+          var=1, d=1000, DGP.seed = 2018)
 
 #Reduction Phase using only the first 70 observations
 outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
-                                           family=gaussian, seed.HC = 1093)
+                                           family=gaussian, seed.HC = 1012)
 
 # Not run, using vector.signif argument
 # Fixing a decision rule of getting the 2 most significant in the first reduction
 # and in the subsequent reduction, only those variables significant at 0.001 level
 # outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
-#                           vector.signif = c(0.001,2), family=gaussian, dmHC = 3)
+#                           vector.signif = c(2,0.001), family=gaussian, dmHC = 3)
 
 }
 \dontshow{

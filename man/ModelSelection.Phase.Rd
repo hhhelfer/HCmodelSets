@@ -17,8 +17,8 @@ ModelSelection.Phase(X,Y, list.reduction, family=gaussian,
   \item{list.reduction}{Indices of variables that where chosen at the reduction phase.}
   \item{family}{A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. See \code{\link{family}} for more details.}
   \item{signif}{Significance level of the likelihood ratio test against the comprehensive model. The default is 0.01.}
-  \item{sq.terms}{Indices of squared terms suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
-  \item{in.terms}{Indices of pairs of variables suggested at the exploratory phase (See \code{\link{Exploratory.Phase}})}
+  \item{sq.terms}{Indices of squared terms suggested at the exploratory phase (See \code{\link{Exploratory.Phase}}).}
+  \item{in.terms}{Indices of pairs of variables suggested at the exploratory phase (See \code{\link{Exploratory.Phase}}).}
   \item{modelSize}{Maximum size of the models to be tested. Curently the maximum is 7. If not provided a default is used.}
   \item{Cox.Hazard}{If TRUE fits proportional hazards regression model. The family argument will be ignored if Cox.Hazard=TRUE.}
 }
@@ -30,13 +30,13 @@ ModelSelection.Phase(X,Y, list.reduction, family=gaussian,
 \references{
 Cox, D. R. and Battey, H. S. (2017). Large numbers of explanatory variables, a semi-descriptive analysis. \emph{Proceedings of the National Academy of Sciences}, 114(32), 8592-8595.
 
-Battey, H. S. and Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631
+Battey, H. S. and Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631.
 }
 \author{
 Hoeltgebaum, H. H.
 }
 
-\section{Acknowledgement}{The work was supported by the UK Engineering and Physical Sciences Research Council under grant number EP/P002757/1}
+\section{Acknowledgement}{The work was supported by the UK Engineering and Physical Sciences Research Council under grant number EP/P002757/1.}
 
 \seealso{
 \code{\link{Reduction.Phase}}, \code{\link{Exploratory.Phase}}
@@ -45,11 +45,11 @@ Hoeltgebaum, H. H.
 \donttest{
 ## Generates a random DGP
 dgp = DGP(s=5, a=3, sigStrength=1, rho=0.9, n=100, intercept=5, noise=1,
-          var=1, d=1000, DGP.seed = 2019)
+          var=1, d=1000, DGP.seed = 2018)
 
 #Reduction Phase using only the first 70 observations
 outcome.Reduction.Phase =  Reduction.Phase(X=dgp$X[1:70,],Y=dgp$Y[1:70],
-                                           family=gaussian, seed.HC = 1093)
+                                           family=gaussian, seed.HC = 1012)
 
 # Exploratory Phase using only the first 70 observations, choosing the variables which
 # were selected at least two times in the third dimension reduction
