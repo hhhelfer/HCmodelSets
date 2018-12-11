@@ -20,7 +20,7 @@ DGP(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=
   \item{noise}{Variance of the observations around the true regression line.}
   \item{var}{Variance of the potential explanatory variables.}
   \item{d}{Number of potential explanatory variables.}
-  \item{intercept}{Expected value of the response variable when all potential explanatory variables are at zero.}
+  \item{intercept}{Expected value of the response variable when all potential explanatory variables are at zero. It is only considered when type.response="N".}
   \item{type.response}{Generates gaussian ("N") or survival ("S") data from a proportional hazards model with Weibull baseline hazard.}
   \item{DGP.seed}{Seed for the random number generator.}
   \item{scale}{scale parameter of the proportional hazards model with Weibull baseline hazard.}
