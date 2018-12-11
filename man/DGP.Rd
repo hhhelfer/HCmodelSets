@@ -25,7 +25,7 @@ DGP(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=
   \item{DGP.seed}{Seed for the random number generator.}
   \item{scale}{scale parameter of the proportional hazards model with Weibull baseline hazard.}
   \item{shape}{shape parameter of the proportional hazards model with Weibull baseline hazard.}
-  \item{rate}{rate parameter of the exponential distribution of censoring times. If is not provided, uncensoring data is generated.}
+  \item{rate}{rate parameter of the exponential distribution of censoring times. If not provided, uncensored data are generated.}
 }
 
 \value{
