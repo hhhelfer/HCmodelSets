@@ -1,13 +1,25 @@
-DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,type.response="N",DGP.seed=NULL, scale=NULL, shape = NULL, rate=NULL){
+DGP = function(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=NULL, scale=NULL, shape = NULL, rate=NULL){
 
   if(type.response=="S" & is.null(scale)==TRUE){
-    stop('You choose cox family! Therefore you must provide parameters scale, shape and rate!')
+    stop('You choose cox family! Therefore you must provide parameters scale, shape!')
   }
   if(type.response=="S" & is.null(shape)==TRUE){
-    stop('You choose cox family! Therefore you must provide parameters scale, shape and rate!')
+    stop('You choose cox family! Therefore you must provide parameters scale, shape!')
   }
-  if(type.response=="S" & is.null(rate)==TRUE){
-    stop('You choose cox family! Therefore you must provide parameters scale, shape and rate!')
+  if(type.response=="N" & is.null(shape)==FALSE){
+    stop('Scale and shape parameters will not be used since type.response is gaussian!')
+  }
+  if(type.response=="N" & is.null(scale)==FALSE){
+    stop('Scale and shape parameters will not be used since type.response is gaussian!')
+  }
+  if(type.response=="N" & is.null(rate)==FALSE){
+    stop('Scale, shape and rate parameters will not be used since type.response is gaussian!')
+  }
+  if(type.response=="S" & !is.null(noise)==TRUE){
+    stop('You choose cox family! Parameter noise is not use!')
+  }
+  if(!is.element(type.response,c("S","N"))){
+    stop('Only supports gaussian (N) or survival data (S)!')
   }
 
   cov1=rho*rep(1,a+s)+(1-rho)*diag(a+s);
@@ -33,13 +45,9 @@ DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,type.response="N",DGP
     epsilon=rnorm(n,0,noise)
     YAll=intercept*rep(1,n)+XAll%*%trueBeta+epsilon;
 
-    if(type.response=="B"){
-      prob = exp(YAll)/(1+exp(YAll))
-      YAll = rbinom(length(prob),1,prob)
-    }
-
     return(list("Y"=YAll,"X"=XAll,"TRUE.idx"=TRUE.idx))
-  } else{
+
+  } else if(type.response=="S" & is.null(rate)==FALSE){
     v <- runif(n=nrow(XAll))
     Tlat <- (- log(v) / (scale * exp(XAll %*% trueBeta)))^(1 / shape)
     C <- rexp(n=nrow(XAll), rate=rate)
@@ -48,5 +56,13 @@ DGP = function(s,a,sigStrength,rho,n,noise,var,d,intercept,type.response="N",DGP
 
     return(list("Y"=time,"X"=XAll,"status"=status,"TRUE.idx"=TRUE.idx))
 
+  } else if(type.response=="S" & is.null(rate)==TRUE){
+    v <- runif(n=nrow(XAll))
+    Tlat <- (- log(v) / (scale * exp(XAll %*% trueBeta)))^(1 / shape)
+    status <- rep(0,length(Tlat))
+
+    return(list("Y"=Tlat,"X"=XAll,"status"=status,"TRUE.idx"=TRUE.idx))
+
   }
 }
+

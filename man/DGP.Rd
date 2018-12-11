@@ -6,8 +6,9 @@
 This function generates realizations of random variables as described in the simple example of Battey, H. S. & Cox, D. R. (2018).
 }
 \usage{
-DGP(s,a,sigStrength,rho,n,noise,var,d,intercept,type.response="N",DGP.seed=NULL,
+DGP(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=NULL,
     scale=NULL,shape=NULL,rate=NULL)
+
 }
 
 \arguments{
@@ -24,7 +25,7 @@ DGP(s,a,sigStrength,rho,n,noise,var,d,intercept,type.response="N",DGP.seed=NULL,
   \item{DGP.seed}{Seed for the random number generator.}
   \item{scale}{scale parameter of the proportional hazards model with Weibull baseline hazard.}
   \item{shape}{shape parameter of the proportional hazards model with Weibull baseline hazard.}
-  \item{rate}{rate parameter of the exponential distribution of censoring times.}
+  \item{rate}{rate parameter of the exponential distribution of censoring times. If is not provided, uncensoring data is generated.}
 }
 
 \value{
