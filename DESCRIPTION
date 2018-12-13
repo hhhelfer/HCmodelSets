@@ -1,7 +1,7 @@
 Package: HCmodelSets
 Type: Package
 Title: Regression with a Large Number of Potential Explanatory Variables
-Version: 1.0.0
+Version: 1.0.1
 Author: H. H. Hoeltgebaum
 Maintainer: H. H. Hoeltgebaum <hh3015@ic.ac.uk>
 BugReports: https://github.com/hhhelfer/HCmodelSets/issues

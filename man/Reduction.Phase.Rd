@@ -22,7 +22,7 @@ Reduction.Phase(X,Y,family=gaussian,
 
 \value{
 \item{Matrix.Selection}{The number of variables selected at each reduction of the hypercube.}
-\item{List.Selection}{The indexes of the variables selected at each reduction of the hypercube.}
+\item{List.Selection}{The indices of the variables retained through each stage of the reduction phase.}
 }
 
 \references{

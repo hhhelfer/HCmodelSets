@@ -94,7 +94,7 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
       if(type.var =="C"){
         ## Continuous response
         print(ggplot(data.res, aes(x=data.res[,1], y=data.res[,2], color=Y)) + geom_point() +
-                labs(x = mat.select.INTER[i,1], y = mat.select.INTER[i,2]) + scale_color_gradientn(colours = rainbow(2)))
+                labs(x = mat.select.INTER[i,1], y = mat.select.INTER[i,2]) + scale_color_gradientn(colours = rainbow(5)))
       }
 
       if(type.var =="B"){

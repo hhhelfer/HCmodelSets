@@ -31,7 +31,7 @@ DGP(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=
 \value{
 \item{X}{The simulated design matrix.}
 \item{Y}{The simulated response variable.}
-\item{TRUE.idx}{Indexes of the variables in the true model.}
+\item{TRUE.idx}{Indices of the variables in the true model.}
 \item{status}{If type.response="S", provides the status from survival data.}
 }
 \references{
