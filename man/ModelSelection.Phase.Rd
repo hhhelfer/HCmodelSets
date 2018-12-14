@@ -24,7 +24,7 @@ ModelSelection.Phase(X,Y, list.reduction, family=gaussian,
 }
 
 \value{
-\item{goodModels}{List of models that are in the confidence set of size 1 to modelSize.}
+\item{goodModels}{List of models that are in the confidence set of size 1 to modelSize. An interaction term between, say, variables x_1 and x_2 is displayed as “x_1 * x_2”; a squared term in, say, variable x_1 is displayed as “x_1 ^2”. If an interaction term is present without the corresponding main effects, the main effects should be added.}
 }
 
 \references{

@@ -24,7 +24,7 @@ ModelSelection.Phase = function(X,Y, list.reduction, family=gaussian, signif=0.0
     X.ITER = iter.names = NULL
     for(ii in 1:nrow(in.terms)){
       X.ITER = cbind(X.ITER,X[,in.terms[ii,1]]*X[,in.terms[ii,2]])
-      iter.names = c(iter.names,paste(in.terms[ii,1],"-",in.terms[ii,2]))
+      iter.names = c(iter.names,paste(in.terms[ii,1],"*",in.terms[ii,2]))
     }
   }
 
