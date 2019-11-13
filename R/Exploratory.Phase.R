@@ -93,14 +93,14 @@ Exploratory.Phase = function(X, Y, list.reduction, family=gaussian, signif=0.01,
 
       if(type.var =="C"){
         ## Continuous response
-        print(ggplot(data.res, aes(x=data.res[,1], y=data.res[,2], color=Y)) + geom_point() +
-                labs(x = mat.select.INTER[i,1], y = mat.select.INTER[i,2]) + scale_color_gradientn(colours = rainbow(5)))
+        print(ggplot(data.res, aes(x=data.res[,1], y=data.res[,2], color=Y)) + geom_point(size=3.5) +
+                labs(x = mat.select.INTER[i,1], y = mat.select.INTER[i,2]) + scale_color_viridis_c(alpha = 1.0))
       }
 
       if(type.var =="B"){
         ## Continuous response
         respost = unique(Y)
-        print(ggplot(data.res, aes(x=data.res[,1], y=data.res[,2], color=factor(Y))) + geom_point() +
+        print(ggplot(data.res, aes(x=data.res[,1], y=data.res[,2], color=factor(Y))) + geom_point(size = 3.5) +
                 lims(colour = c(toString(respost[1]), toString(respost[2]))) + labs(x = mat.select.INTER[i,1], y = mat.select.INTER[i,2], colour = "Y"))
 
       }
