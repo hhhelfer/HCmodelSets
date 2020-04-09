@@ -1,0 +1,15 @@
+acc95cf451b9f799b794fc3af95cdb14 *DESCRIPTION
+9e4a2d0ff445af70f49c6bc63116e92a *LICENSE
+c79e4909ca08aafa8f6047879886f1fa *NAMESPACE
+9ebbb452ab9f6d8bad667db06009ab32 *R/DGP.R
+a02d705e67cc669c73a4712155cf0d7f *R/Exploratory.Phase.R
+4f3eca29e438861a0aa26419d9e503ed *R/ModelSelection.Phase.R
+6c208193edea7388e7275ed478ee6a6d *R/Reduction.Phase.R
+b8c088da21f08a250c766b13c6082cc0 *README.md
+9be6afb48e78bafe942bd62c122bd7df *data/LymphomaData.rda
+57f3fccb8da7dbfa9e25f17632c5e0d7 *data/datalist
+01169cba9eed565fc248ab6aef8c49a5 *man/DGP.Rd
+23d6fb7cc3f02906ba39aa4c20c64e84 *man/Exploratory.Phase.Rd
+2bcdb1a795a0d0f864c9e91b37042216 *man/LymphomaData.Rd
+99e2866fbde4847218c64ef92faa4ad2 *man/ModelSelection.Phase.Rd
+13e0a3ef296d5ef8a825b5e5883e937e *man/Reduction.Phase.Rd

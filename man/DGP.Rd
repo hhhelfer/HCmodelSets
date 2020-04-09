@@ -35,7 +35,11 @@ DGP(s,a,sigStrength,rho,n,noise=NULL,var,d,intercept,type.response="N",DGP.seed=
 \item{status}{If type.response="S", provides the status from survival data.}
 }
 \references{
-Battey, H. S. & Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631.
+Cox, D. R. and Battey, H. S. (2017). Large numbers of explanatory variables, a semi-descriptive analysis. \emph{Proceedings of the National Academy of Sciences}, 114(32), 8592-8595.
+
+Battey, H. S. and Cox, D. R. (2018). Large numbers of explanatory variables: a probabilistic assessment. \emph{Proceedings of the Royal Society of London, A.}, 474(2215), 20170631.
+
+Hoeltgebaum, H., & Battey, H. S. (2019). HCmodelSets: An R Package for Specifying Sets of Well-fitting Models in High Dimensions. \emph{The R Journal}, 11(2), 370-379.
 }
 \author{
 Hoeltgebaum, H. H.
