@@ -9,7 +9,7 @@ Description: Software for performing the reduction, exploratory and model select
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Depends: R (>= 2.10), mvtnorm, ggplot2, survival,
+Depends: R (>= 3.5.0), mvtnorm, ggplot2, survival,
 RoxygenNote: 7.1.0
 NeedsCompilation: no
 Packaged: 2019-12-16 19:33:41 UTC; hhelferhoeltgebaum
