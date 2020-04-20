@@ -1,0 +1,10 @@
+DGP                     Data generating process used by Battey, H. S. &
+                        Cox, D. R. (2018).
+Exploratory.Phase       Perform the Exploratory phase on the hypercube
+                        dimension reduction proposed by Cox, D. R. &
+                        Battey, H. S. (2017)
+ModelSelection.Phase    Construct sets of well-fitting models as
+                        proposed by Cox, D. R. & Battey, H. S. (2017)
+Reduction.Phase         Reduction by successive traversal of hypercubes
+                        proposed by Cox, D. R. & Battey, H. S. (2017)
+patient.data            Lymphoma patients data set.

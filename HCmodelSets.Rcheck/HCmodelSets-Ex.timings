@@ -1,0 +1,6 @@
+name	user	system	elapsed
+DGP	0.006	0.001	0.008	
+Exploratory.Phase	0.205	0.006	0.307	
+LymphomaData	0.160	0.030	0.205	
+ModelSelection.Phase	1.347	0.097	1.588	
+Reduction.Phase	0.030	0.000	0.032	

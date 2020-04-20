@@ -1,8 +1,0 @@
-exportPattern("^[[:alpha:]]+")
-  importFrom("grDevices", "rainbow")
-  importFrom("stats", "coef", "gaussian", "glm", "qf", "residuals",
-             "rnorm")
-  importFrom("stats", "logLik", "qchisq")
-  importFrom("utils", "combn")
-  import("ggplot2","mvtnorm","survival")
-  importFrom("stats", "rbinom", "rexp", "runif")
