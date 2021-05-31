@@ -9,6 +9,7 @@ Description: Software for performing the reduction, exploratory and model select
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
+LazyDataCompression: xz
 Depends: R (>= 3.5.0), mvtnorm, ggplot2, survival,
 RoxygenNote: 7.1.0
 NeedsCompilation: no
